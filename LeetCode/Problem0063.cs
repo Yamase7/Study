@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0063
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             UniquePathsWithObstacles(new int[][]
@@ -18,7 +18,7 @@ namespace Study
             }).Is(2);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             UniquePathsWithObstacles(new int[][]
@@ -28,7 +28,7 @@ namespace Study
             }).Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             UniquePathsWithObstacles(new int[][]
@@ -37,7 +37,7 @@ namespace Study
             }).Is(0);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             UniquePathsWithObstacles(new int[][]

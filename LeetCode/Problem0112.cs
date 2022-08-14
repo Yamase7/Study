@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0112
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             HasPathSum(
@@ -29,7 +29,7 @@ namespace Study
                 22).IsTrue();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             HasPathSum(
@@ -40,7 +40,7 @@ namespace Study
                 5).IsFalse();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             HasPathSum(
@@ -48,7 +48,7 @@ namespace Study
                 0).IsFalse();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             HasPathSum(
@@ -58,7 +58,7 @@ namespace Study
                 1).IsFalse();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case5()
         {
             HasPathSum(

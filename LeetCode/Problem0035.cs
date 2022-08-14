@@ -1,27 +1,27 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0035
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             SearchInsert(new int[] { 1, 3, 5, 6 }, 5)
                 .Is(2);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             SearchInsert(new int[] { 1, 3, 5, 6 }, 2)
                 .Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             SearchInsert(new int[] { 1, 3, 5, 6 }, 7)

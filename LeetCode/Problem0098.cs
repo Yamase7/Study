@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,10 +12,9 @@ namespace Study
     /// ノードの右サブツリーには、そのノードのキーより大きいキーを持つノード が含まれる。
     /// また、左サブツリーと右サブツリーの両方が二分探索木でなければならない。
     /// </summary>
-    [TestClass]
     public class Problem0098
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             IsValidBST(
@@ -25,7 +25,7 @@ namespace Study
                 .IsTrue();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             IsValidBST(
@@ -39,7 +39,7 @@ namespace Study
                 .IsFalse();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             IsValidBST(
@@ -50,7 +50,7 @@ namespace Study
                 .IsFalse();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             IsValidBST(

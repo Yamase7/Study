@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,38 +10,37 @@ namespace Study
     /// 整数配列numsが与えられたとき、最大の和を持つ連続した部分配列を見つけて和を返す。
     /// 部分配列は少なくとも1つの数を含む。
     /// </summary>
-    [TestClass]
     public class Problem0053
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             MaxSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 })
                 .Is(6);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             MaxSubArray(new int[] { 1 })
                 .Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             MaxSubArray(new int[] { 5, 4, -1, 7, 8 })
                 .Is(23);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             MaxSubArray(new int[] { -2, 3, -1, 1, -91, 2, 1, -5, -1 })
                 .Is(3);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case5()
         {
             MaxSubArray(new int[] { 1, 1, 1, -1, 2 })

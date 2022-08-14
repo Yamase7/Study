@@ -1,14 +1,14 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0001
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             TwoSum(
@@ -17,7 +17,7 @@ namespace Study
                 .Is(0, 1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             TwoSum(
@@ -26,7 +26,7 @@ namespace Study
                 .Is(1, 2);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             TwoSum(

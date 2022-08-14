@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0349
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var result = Intersection(
@@ -17,7 +17,7 @@ namespace Study
             result.Length.Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             var result = Intersection(

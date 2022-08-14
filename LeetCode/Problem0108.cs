@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,9 @@ namespace Study
     /// 高さバランスのとれた2分木とは、
     /// 各ノードの2つの部分木の深さが1以上違わない2分木のことである。
     /// </summary>
-    [TestClass]
     public class Problem0108
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var tree = SortedArrayToBST(new int[]
@@ -34,7 +34,7 @@ namespace Study
             tree.right.right.IsNull();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             var tree = SortedArrayToBST(new int[]

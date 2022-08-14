@@ -1,14 +1,14 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0373
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var result = KSmallestPairs(
@@ -20,7 +20,7 @@ namespace Study
             result[2].Is(1, 6);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             var result = KSmallestPairs(
@@ -31,7 +31,7 @@ namespace Study
             result[1].Is(1, 1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             var result = KSmallestPairs(

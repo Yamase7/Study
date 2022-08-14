@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0102
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var list = LevelOrder(
@@ -24,7 +24,7 @@ namespace Study
             list[2].Is(15, 7);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             var list = LevelOrder(new TreeNode(1));
@@ -32,7 +32,7 @@ namespace Study
             list[0].Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             var list = LevelOrder(null);

@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0929
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             NumUniqueEmails(
@@ -20,7 +20,7 @@ namespace Study
                 .Is(2);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             NumUniqueEmails(

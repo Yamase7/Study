@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,10 +9,9 @@ namespace Study
     /// 2つの整数配列preorderとinorderが与えられた際二分木を構築して返せ。
     /// preorderは二分木の前置走査、inorderは同じ二分木の順序走査を表す。
     /// </summary>
-    [TestClass]
     public class Problem0105
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var tree = BuildTree(
@@ -27,7 +27,7 @@ namespace Study
             tree.right.right.val.Is(7);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             var tree = BuildTree(

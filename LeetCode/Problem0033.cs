@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,38 +14,37 @@ namespace Study
     /// 回転後の配列numsと整数のtargetが与えられたとき、targetがnumsの中にあればそのインデックスを、numsの中になければ-1を返します。
     /// 実行時計算量が O(log n) であるアルゴリズムを書け．
     /// </summary>
-    [TestClass]
     public class Problem0033
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             Search(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 0)
                 .Is(4);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             Search(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 3)
                 .Is(-1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             Search(new int[] { 1 }, 0)
                 .Is(-1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             Search(new int[] { 1 }, 1)
                 .Is(0);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case5()
         {
             Search(new int[] { 7, 8, 9, 0, 1, 2, 4, 5, 6 }, 2)

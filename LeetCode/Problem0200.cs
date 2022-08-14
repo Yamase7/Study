@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0200
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             NumIslands(
@@ -21,7 +21,7 @@ namespace Study
                 .Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             NumIslands(
@@ -35,7 +35,7 @@ namespace Study
                 .Is(3);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             NumIslands(

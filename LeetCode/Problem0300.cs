@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,42 +10,41 @@ namespace Study
     /// 部分配列とは、配列から残りの要素の順序を変えずに、一部または全部の要素を削除して得られる配列のことです。
     /// 例えば、[3,6,2,7] は配列[0, 3, 1, 6, 2, 2, 7] の部分配列となります。
     /// </summary>
-    [TestClass]
     public class Problem0300
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             LengthOfLIS(new int[] { 10, 9, 2, 5, 3, 7, 101, 18 })
                 .Is(4);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             LengthOfLIS(new int[] { 0, 1, 0, 3, 2, 3 })
                 .Is(4);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             LengthOfLIS(new int[] { 7, 7, 7, 7, 7, 7, 7 })
                 .Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             LengthOfLIS(new int[] { 8, 4, 5, 6, 3 })
                 .Is(3);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case5()
         {
             LengthOfLIS(new int[] { 10, 9, 2, 5, 3, 7, 20, 18, 26, 35, 6, 70 })
-                .Is(3);
+                .Is(7);
         }
 
     public int LengthOfLIS(int[] nums)

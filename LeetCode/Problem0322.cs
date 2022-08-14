@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,24 +12,23 @@ namespace Study
     /// もし、その金額がコインのどの組み合わせでも補えない場合は、-1を返せ。
     /// 各硬貨は無限にあると仮定してよい。
     /// </summary>
-    [TestClass]
     public class Problem0322
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             CoinChange(new int[] { 1, 2, 5 }, 11)
                 .Is(3);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             CoinChange(new int[] { 2 }, 3)
                 .Is(-1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             CoinChange(new int[] { 1 }, 0)

@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,23 @@ namespace Study
     /// ベルトコンベア上のすべての荷物が数日以内に出荷されるような、
     /// 最も重量が少ない船の容量を返しなさい。
     /// </summary>
-    [TestClass]
     public class Problem1011
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             ShipWithinDays(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 5)
                 .Is(15);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             ShipWithinDays(new int[] { 3, 2, 2, 4, 1, 4 }, 3)
                 .Is(6);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             ShipWithinDays(new int[] { 1, 2, 3, 1, 1 }, 4)

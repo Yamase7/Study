@@ -1,41 +1,41 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0139
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             WordBreak("leetcode", new List<string>() { "leet", "code" })
                 .IsTrue();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             WordBreak("applepenapple", new List<string>() { "apple", "pen" })
                 .IsTrue();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             WordBreak("catsandog", new List<string>() { "cats", "dog", "sand", "and", "cat" })
                 .IsFalse();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             WordBreak("s", new List<string>() { "s" })
                 .IsTrue();
         }
 
-        [TestMethod]
+        [Fact]
         public void Case5()
         {
             WordBreak("andcatsdog", new List<string>() { "cats", "dog", "sand", "and", "cat" })

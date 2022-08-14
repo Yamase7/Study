@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,9 @@ namespace Study
     /// 二分木の最大深度は、ルートノードから
     /// 最遠のリーフノードまでの最長経路に沿ったノードの数である。
     /// </summary>
-    [TestClass]
     public class Problem0104
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             MaxDepth(
@@ -27,7 +27,7 @@ namespace Study
                 .Is(3);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             MaxDepth(

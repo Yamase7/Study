@@ -1,21 +1,21 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0213
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             Rob(new int[] { 2, 3, 2 })
                 .Is(3);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             Rob(new int[] { 1, 2, 3, 1 })

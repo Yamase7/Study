@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0560
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             SubarraySum(
@@ -16,7 +16,7 @@ namespace Study
                 .Is(2);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             SubarraySum(
@@ -25,7 +25,7 @@ namespace Study
                 .Is(2);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             SubarraySum(

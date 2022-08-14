@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -18,24 +19,23 @@ namespace Study
     /// 
     /// O(log n)時間で実行されるアルゴリズムを書くこと．
     /// </summary>
-    [TestClass]
     public class Problem0153
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             FindMin(new int[] { 3, 4, 5, 1, 2 })
                 .Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             FindMin(new int[] { 4, 5, 6, 7, 0, 1, 2 })
                 .Is(0);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             FindMin(new int[] { 11, 13, 15, 17 })

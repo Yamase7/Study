@@ -1,14 +1,14 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0049
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var result = GroupAnagrams(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
@@ -18,14 +18,14 @@ namespace Study
             result.Contains(new List<string>() { "ate", "eat", "tea" });
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             GroupAnagrams(new string[] { "" })
                 .Contains(new List<string>() { "" });
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             GroupAnagrams(new string[] { "a" })

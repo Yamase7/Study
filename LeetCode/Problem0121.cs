@@ -1,35 +1,35 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0121
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 })
                 .Is(5);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             MaxProfit(new int[] { 7, 6, 4, 3, 1 })
                 .Is(0);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             MaxProfit(new int[] { 7, 5, 6, 3, 7, 4 })
                 .Is(4);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             MaxProfit(new int[] { 7 })

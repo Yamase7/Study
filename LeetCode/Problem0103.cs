@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0103
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var list = ZigzagLevelOrder(
@@ -24,7 +24,7 @@ namespace Study
             list[2].Is(15, 7);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             var list = ZigzagLevelOrder(new TreeNode(1));
@@ -32,7 +32,7 @@ namespace Study
             list[0].Is(1);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case3()
         {
             var list = ZigzagLevelOrder(null);
@@ -40,7 +40,7 @@ namespace Study
             list.IsNotNull();
             list.Count.Is(0);
         }
-        [TestMethod]
+        [Fact]
         public void Case4()
         {
             var list = ZigzagLevelOrder(

@@ -1,14 +1,14 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0695
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             MaxAreaOfIsland(
@@ -26,7 +26,7 @@ namespace Study
                 .Is(6);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             MaxAreaOfIsland(

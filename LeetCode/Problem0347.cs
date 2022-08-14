@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Study
 {
-    [TestClass]
     public class Problem0347
     {
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var result = TopKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2);

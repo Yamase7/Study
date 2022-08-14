@@ -1,4 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ChainingAssertion;
+using Xunit;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,11 +13,10 @@ namespace Study
     ///
     /// 注意: マージ処理は、両方の木のルートノードから開始しなければならない。
     /// </summary>
-    [TestClass]
     public class Problem0617
     {
 
-        [TestMethod]
+        [Fact]
         public void Case1()
         {
             var mergedTree = MergeTrees(
@@ -44,7 +44,7 @@ namespace Study
             mergedTree.right.right.val.Is(7);
         }
 
-        [TestMethod]
+        [Fact]
         public void Case2()
         {
             var mergedTree = MergeTrees(
