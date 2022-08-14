@@ -10,7 +10,7 @@ namespace Study
     /// 例えば、[3,6,2,7] は配列[0, 3, 1, 6, 2, 2, 7] の部分配列となります。
     /// </summary>
     [TestClass]
-    public class Problem300
+    public class Problem0300
     {
         [TestMethod]
         public void Case1()

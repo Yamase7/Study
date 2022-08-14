@@ -12,7 +12,7 @@ namespace Study
     /// また、左サブツリーと右サブツリーの両方が二分探索木でなければならない。
     /// </summary>
     [TestClass]
-    public class Problem098
+    public class Problem0098
     {
         [TestMethod]
         public void Case1()

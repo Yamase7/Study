@@ -10,7 +10,7 @@ namespace Study
     /// •”•ª”z—ñ‚Í­‚È‚­‚Æ‚à1‚Â‚Ì”‚ğŠÜ‚ŞB
     /// </summary>
     [TestClass]
-    public class Problem053
+    public class Problem0053
     {
         [TestMethod]
         public void Case1()

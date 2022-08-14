@@ -11,7 +11,7 @@ namespace Study
     /// 最遠のリーフノードまでの最長経路に沿ったノードの数である。
     /// </summary>
     [TestClass]
-    public class Problem104
+    public class Problem0104
     {
         [TestMethod]
         public void Case1()

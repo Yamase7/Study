@@ -5,7 +5,7 @@ using System.Linq;
 namespace Study
 {
     [TestClass]
-    public class Problem112
+    public class Problem0112
     {
         [TestMethod]
         public void Case1()

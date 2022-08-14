@@ -9,7 +9,7 @@ namespace Study
     /// preorderは二分木の前置走査、inorderは同じ二分木の順序走査を表す。
     /// </summary>
     [TestClass]
-    public class Problem105
+    public class Problem0105
     {
         [TestMethod]
         public void Case1()

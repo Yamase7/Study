@@ -13,7 +13,7 @@ namespace Study
     /// 注意: マージ処理は、両方の木のルートノードから開始しなければならない。
     /// </summary>
     [TestClass]
-    public class Problem617
+    public class Problem0617
     {
 
         [TestMethod]

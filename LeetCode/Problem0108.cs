@@ -12,7 +12,7 @@ namespace Study
     /// 各ノードの2つの部分木の深さが1以上違わない2分木のことである。
     /// </summary>
     [TestClass]
-    public class Problem108
+    public class Problem0108
     {
         [TestMethod]
         public void Case1()
