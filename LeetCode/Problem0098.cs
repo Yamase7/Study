@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace Study
                     2,
                     new TreeNode(1),
                     new TreeNode(3)))
-                .IsTrue();
+                .Should().BeTrue();
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace Study
                         4,
                         new TreeNode(3),
                         new TreeNode(6))))
-                .IsFalse();
+                .Should().BeFalse();
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace Study
                     2,
                     new TreeNode(2),
                     new TreeNode(2)))
-                .IsFalse();
+                .Should().BeFalse();
         }
 
         [Fact]
@@ -61,7 +61,7 @@ namespace Study
                         6,
                         new TreeNode(3),
                         new TreeNode(7))))
-                .IsFalse();
+                .Should().BeFalse();
         }
 
         private bool IsValidBST(TreeNode root)

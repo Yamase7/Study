@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace Study
                 new int[] { 1, 2, 2, 1 },
                 new int[] { 2, 2 });
             result.Contains(2);
-            result.Length.Is(1);
+            result.Length.Should().Be(1);
         }
 
         [Fact]
@@ -25,7 +25,7 @@ namespace Study
                 new int[] { 9, 4, 9, 8, 4 });
             result.Contains(9);
             result.Contains(4);
-            result.Length.Is(2);
+            result.Length.Should().Be(2);
         }
 
         public int[] Intersection(int[] nums1, int[] nums2)

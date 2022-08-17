@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,8 @@ namespace Study
         public void Case1()
         {
             var result = TopKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2);
-            result.Contains(1).IsTrue();
-            result.Contains(2).IsTrue();
+            result.Contains(1).Should().BeTrue();
+            result.Contains(2).Should().BeTrue();
         }
 
         public int[] TopKFrequent(int[] nums, int k)

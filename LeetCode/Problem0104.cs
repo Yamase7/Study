@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace Study
                         20,
                         new TreeNode(15),
                         new TreeNode(7))))
-                .Is(3);
+                .Should().Be(3);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace Study
                     1,
                     null,
                     new TreeNode(2)))
-                .Is(2);
+                .Should().Be(2);
         }
 
         private int MaxDepth(TreeNode root)

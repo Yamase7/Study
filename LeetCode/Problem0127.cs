@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace Study
                     "log",
                     "cog",
                 })
-                .Is(5);
+                .Should().Be(5);
         }
 
         [Fact]
@@ -39,7 +39,7 @@ namespace Study
                     "lot",
                     "log",
                 })
-                .Is(0);
+                .Should().Be(0);
         }
 
         public int LadderLength(

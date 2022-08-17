@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -16,35 +16,35 @@ namespace Study
         public void Case1()
         {
             MaxSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 })
-                .Is(6);
+                .Should().Be(6);
         }
 
         [Fact]
         public void Case2()
         {
             MaxSubArray(new int[] { 1 })
-                .Is(1);
+                .Should().Be(1);
         }
 
         [Fact]
         public void Case3()
         {
             MaxSubArray(new int[] { 5, 4, -1, 7, 8 })
-                .Is(23);
+                .Should().Be(23);
         }
 
         [Fact]
         public void Case4()
         {
             MaxSubArray(new int[] { -2, 3, -1, 1, -91, 2, 1, -5, -1 })
-                .Is(3);
+                .Should().Be(3);
         }
 
         [Fact]
         public void Case5()
         {
             MaxSubArray(new int[] { 1, 1, 1, -1, 2 })
-                .Is(4);
+                .Should().Be(4);
         }
 
         public int MaxSubArray(int[] nums)

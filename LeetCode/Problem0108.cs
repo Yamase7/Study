@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -25,13 +25,13 @@ namespace Study
                 5,
                 9
             });
-            tree.val.Is(0);
-            tree.left.val.Is(-3);
-            tree.right.val.Is(9);
-            tree.left.left.val.Is(-10);
-            tree.left.right.IsNull();
-            tree.right.left.val.Is(5);
-            tree.right.right.IsNull();
+            tree.val.Should().Be(0);
+            tree.left.val.Should().Be(-3);
+            tree.right.val.Should().Be(9);
+            tree.left.left.val.Should().Be(-10);
+            tree.left.right.Should().BeNull();
+            tree.right.left.val.Should().Be(5);
+            tree.right.right.Should().BeNull();
         }
 
         [Fact]
@@ -42,8 +42,8 @@ namespace Study
                 1,
                 3,
             });
-            tree.val.Is(3);
-            tree.left.val.Is(1);
+            tree.val.Should().Be(3);
+            tree.left.val.Should().Be(1);
         }
 
         public TreeNode SortedArrayToBST(int[] nums)

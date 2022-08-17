@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace Study
                 new int[] { 0,0,0 },
                 new int[] { 0,1,0 },
                 new int[] { 0,0,0 },
-            }).Is(2);
+            }).Should().Be(2);
         }
 
         [Fact]
@@ -25,7 +25,7 @@ namespace Study
             {
                 new int[] { 0,1 },
                 new int[] { 0,0 },
-            }).Is(1);
+            }).Should().Be(1);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Study
             UniquePathsWithObstacles(new int[][]
             {
                 new int[] { 1 },
-            }).Is(0);
+            }).Should().Be(0);
         }
 
         [Fact]
@@ -44,7 +44,7 @@ namespace Study
             {
                 new int[] { 1 },
                 new int[] { 0 },
-            }).Is(0);
+            }).Should().Be(0);
         }
 
         public int UniquePathsWithObstacles(int[][] obstacleGrid)

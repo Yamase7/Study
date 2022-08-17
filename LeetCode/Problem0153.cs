@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,21 +25,21 @@ namespace Study
         public void Case1()
         {
             FindMin(new int[] { 3, 4, 5, 1, 2 })
-                .Is(1);
+                .Should().Be(1);
         }
 
         [Fact]
         public void Case2()
         {
             FindMin(new int[] { 4, 5, 6, 7, 0, 1, 2 })
-                .Is(0);
+                .Should().Be(0);
         }
 
         [Fact]
         public void Case3()
         {
             FindMin(new int[] { 11, 13, 15, 17 })
-                .Is(11);
+                .Should().Be(11);
         }
 
         public int FindMin(int[] nums)

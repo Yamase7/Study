@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,35 +11,35 @@ namespace Study
         public void Case1()
         {
             WordBreak("leetcode", new List<string>() { "leet", "code" })
-                .IsTrue();
+                .Should().BeTrue();
         }
 
         [Fact]
         public void Case2()
         {
             WordBreak("applepenapple", new List<string>() { "apple", "pen" })
-                .IsTrue();
+                .Should().BeTrue();
         }
 
         [Fact]
         public void Case3()
         {
             WordBreak("catsandog", new List<string>() { "cats", "dog", "sand", "and", "cat" })
-                .IsFalse();
+                .Should().BeFalse();
         }
 
         [Fact]
         public void Case4()
         {
             WordBreak("s", new List<string>() { "s" })
-                .IsTrue();
+                .Should().BeTrue();
         }
 
         [Fact]
         public void Case5()
         {
             WordBreak("andcatsdog", new List<string>() { "cats", "dog", "sand", "and", "cat" })
-                .IsTrue();
+                .Should().BeTrue();
         }
 
         public bool WordBreak(string s, IList<string> wordDict)

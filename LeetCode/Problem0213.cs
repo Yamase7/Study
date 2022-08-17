@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -12,14 +12,14 @@ namespace Study
         public void Case1()
         {
             Rob(new int[] { 2, 3, 2 })
-                .Is(3);
+                .Should().Be(3);
         }
 
         [Fact]
         public void Case2()
         {
             Rob(new int[] { 1, 2, 3, 1 })
-                .Is(4);
+                .Should().Be(4);
         }
 
         public int Rob(int[] nums)

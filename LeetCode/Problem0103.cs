@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +19,9 @@ namespace Study
                         new TreeNode(15),
                         new TreeNode(7))));
 
-            list[0].Is(3);
-            list[1].Is(20, 9);
-            list[2].Is(15, 7);
+            list[0].Should().Equal(3);
+            list[1].Should().Equal(20, 9);
+            list[2].Should().Equal(15, 7);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace Study
         {
             var list = ZigzagLevelOrder(new TreeNode(1));
 
-            list[0].Is(1);
+            list[0].Should().Equal(1);
         }
 
         [Fact]
@@ -37,8 +37,8 @@ namespace Study
         {
             var list = ZigzagLevelOrder(null);
 
-            list.IsNotNull();
-            list.Count.Is(0);
+            list.Should().NotBeNull();
+            list.Count.Should().Be(0);
         }
         [Fact]
         public void Case4()
@@ -55,9 +55,9 @@ namespace Study
                         null,
                         new TreeNode(5))));
 
-            list[0].Is(1);
-            list[1].Is(3, 2);
-            list[2].Is(4, 5);
+            list[0].Should().Equal(1);
+            list[1].Should().Equal(3, 2);
+            list[2].Should().Equal(4, 5);
         }
 
         private IList<IList<int>> ZigzagLevelOrder(TreeNode root)

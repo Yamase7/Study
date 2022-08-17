@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace Study
                             4,
                             null,
                             new TreeNode(1)))),
-                22).IsTrue();
+                22).Should().BeTrue();
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace Study
                     1,
                     new TreeNode(2),
                     new TreeNode(3)),
-                5).IsFalse();
+                5).Should().BeFalse();
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace Study
         {
             HasPathSum(
                 null,
-                0).IsFalse();
+                0).Should().BeFalse();
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace Study
                 new TreeNode(
                     1,
                     new TreeNode(2)),
-                1).IsFalse();
+                1).Should().BeFalse();
         }
 
         [Fact]
@@ -66,7 +66,7 @@ namespace Study
                     -2,
                     null,
                     new TreeNode(-3)),
-                -5).IsTrue();
+                -5).Should().BeTrue();
         }
 
         private bool HasPathSum(TreeNode node, int targetSum)

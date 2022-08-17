@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +19,9 @@ namespace Study
                         new TreeNode(15),
                         new TreeNode(7))));
 
-            list[0].Is(3);
-            list[1].Is(9, 20);
-            list[2].Is(15, 7);
+            list[0].Should().Equal(3);
+            list[1].Should().Equal(9, 20);
+            list[2].Should().Equal(15, 7);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace Study
         {
             var list = LevelOrder(new TreeNode(1));
 
-            list[0].Is(1);
+            list[0].Should().Equal(1);
         }
 
         [Fact]
@@ -37,8 +37,8 @@ namespace Study
         {
             var list = LevelOrder(null);
 
-            list.IsNotNull();
-            list.Count.Is(0);
+            list.Should().NotBeNull();
+            list.Count.Should().Be(0);
         }
 
         private IList<IList<int>> LevelOrder(TreeNode root)

@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -18,21 +18,21 @@ namespace Study
         public void Case1()
         {
             CoinChange(new int[] { 1, 2, 5 }, 11)
-                .Is(3);
+                .Should().Be(3);
         }
 
         [Fact]
         public void Case2()
         {
             CoinChange(new int[] { 2 }, 3)
-                .Is(-1);
+                .Should().Be(-1);
         }
 
         [Fact]
         public void Case3()
         {
             CoinChange(new int[] { 1 }, 0)
-                .Is(0);
+                .Should().Be(0);
         }
 
         public int CoinChange(int[] coins, int amount)

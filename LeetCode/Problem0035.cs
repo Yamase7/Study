@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +11,21 @@ namespace Study
         public void Case1()
         {
             SearchInsert(new int[] { 1, 3, 5, 6 }, 5)
-                .Is(2);
+                .Should().Be(2);
         }
 
         [Fact]
         public void Case2()
         {
             SearchInsert(new int[] { 1, 3, 5, 6 }, 2)
-                .Is(1);
+                .Should().Be(1);
         }
 
         [Fact]
         public void Case3()
         {
             SearchInsert(new int[] { 1, 3, 5, 6 }, 7)
-                .Is(4);
+                .Should().Be(4);
         }
 
         public int SearchInsert(int[] nums, int target)

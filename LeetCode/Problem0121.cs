@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -12,28 +12,28 @@ namespace Study
         public void Case1()
         {
             MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 })
-                .Is(5);
+                .Should().Be(5);
         }
 
         [Fact]
         public void Case2()
         {
             MaxProfit(new int[] { 7, 6, 4, 3, 1 })
-                .Is(0);
+                .Should().Be(0);
         }
 
         [Fact]
         public void Case3()
         {
             MaxProfit(new int[] { 7, 5, 6, 3, 7, 4 })
-                .Is(4);
+                .Should().Be(4);
         }
 
         [Fact]
         public void Case4()
         {
             MaxProfit(new int[] { 7 })
-                .Is(0);
+                .Should().Be(0);
         }
 
         public int MaxProfit(int[] prices)

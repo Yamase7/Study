@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -18,21 +18,21 @@ namespace Study
         public void Case1()
         {
             KthGrammar(1, 1)
-                .Is(0);
+                .Should().Be(0);
         }
 
         [Fact]
         public void Case2()
         {
             KthGrammar(1, 1)
-                .Is(0);
+                .Should().Be(0);
         }
 
         [Fact]
         public void Case3()
         {
             KthGrammar(2, 2)
-                .Is(1);
+                .Should().Be(1);
         }
 
         public int KthGrammar(int n, int k)

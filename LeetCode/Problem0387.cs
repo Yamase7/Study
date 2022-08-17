@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +11,21 @@ namespace Study
         public void Case1()
         {
             FirstUniqChar("leetcode")
-                .Is(0);
+                .Should().Be(0);
         }
 
         [Fact]
         public void Case2()
         {
             FirstUniqChar("loveleetcode")
-                .Is(2);
+                .Should().Be(2);
         }
 
         [Fact]
         public void Case3()
         {
             FirstUniqChar("aabb")
-                .Is(-1);
+                .Should().Be(-1);
         }
 
         public int FirstUniqChar(string s)

@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -15,9 +15,9 @@ namespace Study
                 new int[] { 1, 7, 11 },
                 new int[] { 2, 4, 6 },
                 3);
-            result[0].Is(1, 2);
-            result[1].Is(1, 4);
-            result[2].Is(1, 6);
+            result[0].Should().Equal(1, 2);
+            result[1].Should().Equal(1, 4);
+            result[2].Should().Equal(1, 6);
         }
 
         [Fact]
@@ -27,8 +27,8 @@ namespace Study
                 new int[] { 1, 1, 2 },
                 new int[] { 1, 2, 3 },
                 2);
-            result[0].Is(1, 1);
-            result[1].Is(1, 1);
+            result[0].Should().Equal(1, 1);
+            result[1].Should().Equal(1, 1);
         }
 
         [Fact]
@@ -38,8 +38,8 @@ namespace Study
                 new int[] { 1, 2 },
                 new int[] { 3 },
                 3);
-            result[0].Is(1, 3);
-            result[1].Is(2, 3);
+            result[0].Should().Equal(1, 3);
+            result[1].Should().Equal(2, 3);
         }
 
         public class IndexPair

@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace Study
                     new int[] { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
                     new int[] { 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 }
                 })
-                .Is(6);
+                .Should().Be(6);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Study
                 {
                     new int[] { 0, 0, 0, 0, 0, 0, 0, 0 },
                 })
-                .Is(0);
+                .Should().Be(0);
         }
 
         public int MaxAreaOfIsland(int[][] grid)

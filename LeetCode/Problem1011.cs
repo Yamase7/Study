@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -20,21 +20,21 @@ namespace Study
         public void Case1()
         {
             ShipWithinDays(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 5)
-                .Is(15);
+                .Should().Be(15);
         }
 
         [Fact]
         public void Case2()
         {
             ShipWithinDays(new int[] { 3, 2, 2, 4, 1, 4 }, 3)
-                .Is(6);
+                .Should().Be(6);
         }
 
         [Fact]
         public void Case3()
         {
             ShipWithinDays(new int[] { 1, 2, 3, 1, 1 }, 4)
-                .Is(3);
+                .Should().Be(3);
         }
 
         public int ShipWithinDays(int[] weights, int days)

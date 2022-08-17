@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +18,13 @@ namespace Study
                 new int[] { 3, 9, 20, 15, 7 },
                 new int[] { 9, 3, 15, 20, 7 });
 
-            tree.val.Is(3);
-            tree.left.val.Is(9);
-            tree.right.val.Is(20);
-            tree.left.left.IsNull();
-            tree.left.right.IsNull();
-            tree.right.left.val.Is(15);
-            tree.right.right.val.Is(7);
+            tree.val.Should().Be(3);
+            tree.left.val.Should().Be(9);
+            tree.right.val.Should().Be(20);
+            tree.left.left.Should().BeNull();
+            tree.left.right.Should().BeNull();
+            tree.right.left.val.Should().Be(15);
+            tree.right.right.val.Should().Be(7);
         }
 
         [Fact]
@@ -34,9 +34,9 @@ namespace Study
                 new int[] { -1 },
                 new int[] { -1 });
 
-            tree.val.Is(-1);
-            tree.left.IsNull();
-            tree.right.IsNull();
+            tree.val.Should().Be(-1);
+            tree.left.Should().BeNull();
+            tree.right.Should().BeNull();
         }
 
         private TreeNode BuildTree(int[] preorder, int[] inorder)

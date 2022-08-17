@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,81 +16,81 @@ namespace Study
         public void Case1()
         {
             LengthOfLIS(new int[] { 10, 9, 2, 5, 3, 7, 101, 18 })
-                .Is(4);
+                .Should().Be(4);
         }
 
         [Fact]
         public void Case2()
         {
             LengthOfLIS(new int[] { 0, 1, 0, 3, 2, 3 })
-                .Is(4);
+                .Should().Be(4);
         }
 
         [Fact]
         public void Case3()
         {
             LengthOfLIS(new int[] { 7, 7, 7, 7, 7, 7, 7 })
-                .Is(1);
+                .Should().Be(1);
         }
 
         [Fact]
         public void Case4()
         {
             LengthOfLIS(new int[] { 8, 4, 5, 6, 3 })
-                .Is(3);
+                .Should().Be(3);
         }
 
         [Fact]
         public void Case5()
         {
             LengthOfLIS(new int[] { 10, 9, 2, 5, 3, 7, 20, 18, 26, 35, 6, 70 })
-                .Is(7);
+                .Should().Be(7);
         }
 
-    public int LengthOfLIS(int[] nums)
-    {
-        // LISの末尾の内最小を長さ毎の配列に入れる配列を用意する
-        int[] tails = new int[nums.Length];
-
-        // 最大のLISの長さを計測するための変数を用意
-        int tailsLength = 0;
-
-        // 配列からLISの先頭とする値を一つずつ取り出す
-        foreach (var currentNo in nums)
+        public int LengthOfLIS(int[] nums)
         {
-            // LISの値を確認する初回の範囲を定める
-            var lowIndex = 0;
-            var highIndex = tailsLength;
+            // LISの末尾の内最小を長さ毎の配列に入れる配列を用意する
+            int[] tails = new int[nums.Length];
 
-            // 範囲が1になるまで繰り返す
-            while (lowIndex != highIndex)
+            // 最大のLISの長さを計測するための変数を用意
+            int tailsLength = 0;
+
+            // 配列からLISの先頭とする値を一つずつ取り出す
+            foreach (var currentNo in nums)
             {
-                // LIS検索範囲の中央のインデックスを割り出す
-                int tailsIndex = (lowIndex + highIndex) / 2;
+                // LISの値を確認する初回の範囲を定める
+                var lowIndex = 0;
+                var highIndex = tailsLength;
 
-                // 検索した中央の値が取り出した値の方が大きければ検索範囲を中央の次からに変更
-                if (tails[tailsIndex] < currentNo)
+                // 範囲が1になるまで繰り返す
+                while (lowIndex != highIndex)
                 {
-                    lowIndex = tailsIndex + 1;
+                    // LIS検索範囲の中央のインデックスを割り出す
+                    int tailsIndex = (lowIndex + highIndex) / 2;
+
+                    // 検索した中央の値が取り出した値の方が大きければ検索範囲を中央の次からに変更
+                    if (tails[tailsIndex] < currentNo)
+                    {
+                        lowIndex = tailsIndex + 1;
+                    }
+                    // 小さければ中央までとする
+                    else
+                    {
+                        highIndex = tailsIndex;
+                    }
                 }
-                // 小さければ中央までとする
-                else
+
+                // 範囲が一つになった箇所に番号を格納
+                tails[lowIndex] = currentNo;
+
+                // 上書きじゃなければLISの新規追加となるのでサイズをインクリメント
+                if (lowIndex == tailsLength)
                 {
-                    highIndex = tailsIndex;
+                    tailsLength++;
+
                 }
             }
-
-            // 範囲が一つになった箇所に番号を格納
-            tails[lowIndex] = currentNo;
-
-            // 上書きじゃなければLISの新規追加となるのでサイズをインクリメント
-            if (lowIndex == tailsLength)
-            {
-                tailsLength++;
-
-            }
+            return tailsLength;
         }
-        return tailsLength;
-    }
     }
 }

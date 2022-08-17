@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace Study
                     "test.e.mail+bob.cathy@leetcode.com",
                     "testemail+david@lee.tcode.com"
                 })
-                .Is(2);
+                .Should().Be(2);
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace Study
                     "b@leetcode.com",
                     "c@leetcode.com"
                 })
-                .Is(3);
+                .Should().Be(3);
         }
 
     public int NumUniqueEmails(string[] emails)

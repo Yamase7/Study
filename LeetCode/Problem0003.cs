@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -15,21 +15,21 @@ namespace Study
         public void Case1()
         {
             LengthOfLongestSubstring("abcabcbb")
-                .Is(3);
+                .Should().Be(3);
         }
 
         [Fact]
         public void Case2()
         {
             LengthOfLongestSubstring("bbbbb")
-                .Is(1);
+                .Should().Be(1);
         }
 
         [Fact]
         public void Case3()
         {
             LengthOfLongestSubstring("pwwkew")
-                .Is(3);
+                .Should().Be(3);
         }
 
         public int LengthOfLongestSubstring(string s)

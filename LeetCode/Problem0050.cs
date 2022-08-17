@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 
 namespace LeetCode
@@ -9,7 +9,7 @@ namespace LeetCode
         public void Case1()
         {
             MyPow(2.0, 10)
-                .Is(1024.0);
+                .Should().Be(1024.0);
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace LeetCode
         public void Case3()
         {
             MyPow(2.0, -2)
-                .Is(0.25);
+                .Should().Be(0.25);
         }
 
         public double MyPow(double x, int n)

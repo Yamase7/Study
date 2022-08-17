@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace Study
                     new char[] {'1', '1', '0', '0', '0'},
                     new char[] {'0', '0', '0', '0', '0'},
                 })
-                .Is(1);
+                .Should().Be(1);
         }
 
         [Fact]
@@ -32,7 +32,7 @@ namespace Study
                     new char[] {'0', '0', '1', '0', '0'},
                     new char[] {'0', '0', '0', '1', '1'},
                 })
-                .Is(3);
+                .Should().Be(3);
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace Study
                     new char[] {'1', '0', '1', '1', '0'},
                     new char[] {'1', '0', '0', '1', '0'},
                 })
-                .Is(4);
+                .Should().Be(4);
         }
 
         public int NumIslands(char[][] grid)

@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -18,21 +18,21 @@ namespace Study
         public void Case1()
         {
             MinSubArrayLen(7, new int[]{ 2, 3, 1, 2, 4, 3 })
-                .Is(2);
+                .Should().Be(2);
         }
 
         [Fact]
         public void Case2()
         {
             MinSubArrayLen(4, new int[] { 1, 4, 4 })
-                .Is(1);
+                .Should().Be(1);
         }
 
         [Fact]
         public void Case3()
         {
             MinSubArrayLen(11, new int[] { 1, 1, 1, 1, 1, 1, 1, 1 })
-                .Is(0);
+                .Should().Be(0);
         }
 
         /// <summary>

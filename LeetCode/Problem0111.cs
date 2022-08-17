@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace Study
                         20,
                         new TreeNode(15),
                         new TreeNode(7))))
-                .Is(2);
+                .Should().Be(2);
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace Study
                                     6,
                                     null,
                                     null))))))
-                .Is(5);
+                .Should().Be(5);
         }
 
     private int MinDepth(TreeNode root)

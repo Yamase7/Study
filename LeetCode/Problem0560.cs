@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Study
             SubarraySum(
                 new int[] { 1, 1, 1 },
                 2)
-                .Is(2);
+                .Should().Be(2);
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace Study
             SubarraySum(
                 new int[] { 1, 2, 3 },
                 3)
-                .Is(2);
+                .Should().Be(2);
         }
 
         [Fact]
@@ -31,7 +31,7 @@ namespace Study
             SubarraySum(
                 new int[] { 1, 2, 1, 2, 1 },
                 3)
-                .Is(4);
+                .Should().Be(4);
         }
 
         public int SubarraySum(int[] nums, int k)

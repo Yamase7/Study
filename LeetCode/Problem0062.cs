@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +11,14 @@ namespace Study
         public void Case1()
         {
             UniquePathsWithDPFix2(3, 7)
-                .Is(28);
+                .Should().Be(28);
         }
 
         [Fact]
         public void Case2()
         {
             UniquePathsWithDPFix2(3, 2)
-                .Is(3);
+                .Should().Be(3);
         }
 
         public int UniquePathsWithDPFix1(int m, int n)

@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,12 +36,12 @@ namespace Study
                         3,
                         null,
                         new TreeNode(7))));
-            mergedTree.val.Is(3);
-            mergedTree.left.val.Is(4);
-            mergedTree.left.left.val.Is(5);
-            mergedTree.left.right.val.Is(4);
-            mergedTree.right.val.Is(5);
-            mergedTree.right.right.val.Is(7);
+            mergedTree.val.Should().Be(3);
+            mergedTree.left.val.Should().Be(4);
+            mergedTree.left.left.val.Should().Be(5);
+            mergedTree.left.right.val.Should().Be(4);
+            mergedTree.right.val.Should().Be(5);
+            mergedTree.right.right.val.Should().Be(7);
         }
 
         [Fact]
@@ -52,8 +52,8 @@ namespace Study
                 new TreeNode(
                     1,
                     new TreeNode(2)));
-            mergedTree.val.Is(2);
-            mergedTree.left.val.Is(2);
+            mergedTree.val.Should().Be(2);
+            mergedTree.left.val.Should().Be(2);
         }
 
         private TreeNode MergeTrees(TreeNode node1, TreeNode node2)

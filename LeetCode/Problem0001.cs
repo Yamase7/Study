@@ -1,4 +1,4 @@
-using ChainingAssertion;
+using FluentAssertions;
 using Xunit;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace Study
             TwoSum(
                 new int[] { 2, 7, 11, 15 },
                 9)
-                .Is(0, 1);
+                .Should().Equal(0, 1);
         }
 
         [Fact]
@@ -23,7 +23,7 @@ namespace Study
             TwoSum(
                 new int[] { 3, 2, 4 },
                 6)
-                .Is(1, 2);
+                .Should().Equal(1, 2);
         }
 
         [Fact]
@@ -32,7 +32,7 @@ namespace Study
             TwoSum(
                 new int[] { 3, 3 },
                 6)
-                .Is(0, 1);
+                .Should().Equal(0, 1);
         }
 
     public int[] TwoSum(int[] nums, int target)
