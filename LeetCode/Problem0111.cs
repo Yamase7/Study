@@ -50,53 +50,53 @@ namespace Study
                 .Should().Be(5);
         }
 
-    private int MinDepth(TreeNode root)
-    {
-        if (root == null)
+        private int MinDepth(TreeNode root)
         {
-            return 0;
-        }
-
-        var queue = new Queue<TreeNode>();
-        queue.Enqueue(root);
-        int depth = 0;
-        // 深さ毎に各ノードを確認
-        while (queue.Count != 0)
-        {
-            // 現在探索している深さを記録
-            depth++;
-
-            // 現在の深さの確認対象数
-            var currentTargetCount = queue.Count;
-
-            // 確認対象がリーフノードかどうか確認
-            for (int i = 0; i < currentTargetCount; i++)
+            if (root == null)
             {
-                var target = queue.Dequeue();
+                return 0;
+            }
 
-                // 対象がリーフノードであれば今の深さを返す
-                if (target.left is null && target.right is null)
-                {
-                    return depth;
-                }
+            var queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+            int depth = 0;
+            // 深さ毎に各ノードを確認
+            while (queue.Count != 0)
+            {
+                // 現在探索している深さを記録
+                depth++;
 
-                // 左のノードが存在していれば左のノードを探索対象に追加
-                if (target.left != null)
-                {
-                    queue.Enqueue(target.left);
-                }
+                // 現在の深さの確認対象数
+                var currentTargetCount = queue.Count;
 
-                // 右のノードが存在していれば右のノードを探索対象に追加
-                if (target.right != null)
+                // 確認対象がリーフノードかどうか確認
+                for (int i = 0; i < currentTargetCount; i++)
                 {
-                    queue.Enqueue(target.right);
+                    var target = queue.Dequeue();
+
+                    // 対象がリーフノードであれば今の深さを返す
+                    if (target.left is null && target.right is null)
+                    {
+                        return depth;
+                    }
+
+                    // 左のノードが存在していれば左のノードを探索対象に追加
+                    if (target.left != null)
+                    {
+                        queue.Enqueue(target.left);
+                    }
+
+                    // 右のノードが存在していれば右のノードを探索対象に追加
+                    if (target.right != null)
+                    {
+                        queue.Enqueue(target.right);
+                    }
                 }
             }
-        }
 
-        // ここにたどり着いたら異常
-        return depth;
-    }
+            // ここにたどり着いたら異常
+            return depth;
+        }
 
         private class TreeNode
         {
