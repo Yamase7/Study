@@ -35,6 +35,15 @@ namespace Study
                 .Should().Equal(0, 1);
         }
 
+        [Fact]
+        public void Case4()
+        {
+            TwoSum(
+                new int[] { 2, 7, 11, 15 },
+                13)
+                .Should().Equal(0, 2);
+        }
+
         public int[] TwoSum(int[] nums, int target)
         {
             // 確認済みの値とインデックスを記録するためのDictionaryを作成

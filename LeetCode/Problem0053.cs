@@ -47,33 +47,34 @@ namespace Study
                 .Should().Be(4);
         }
 
+        [Fact]
+        public void Case6()
+        {
+            MaxSubArray(new int[] { -2, 1 })
+                .Should().Be(1);
+        }
+
         public int MaxSubArray(int[] nums)
         {
-            // 部分配列の合計値記録用変数
-            var temp = nums[0];
+            var length = nums.Length;
+            var dp = new int[length];
 
-            // 最大の部分配列合計値用変数
-            var maxSum = nums[0];
+            // 最初の値を現時点の最大部分配列合計値とする
+            dp[0] = nums[0];
+            var max = dp[0];
 
-            // 2番目から探索する
-            for (int i = 1; i < nums.Length; i++)
+            // 2番目の値から一つずつ確認する
+            for (var i = 1; i < length; i++)
             {
-                // 取り出した値を合計値として加算
-                temp += nums[i];
+                // 現時点までの配列で最大部分配列合計値を求める。
+                // 現時点の値にひとつ前までの最大部分配列合計値が1以上であれば加算し違うのであれば加算しない
+                dp[i] = nums[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);
 
-                // 合計値が-にならなければ最大合計値と比較して最大値を更新する
-                if (temp >= 0)
-                {
-                    maxSum = Math.Max(maxSum, temp);
-                }
-                // -であれば最大合計値を求めるのに邪魔になるので部分配列の合計値をリセットする
-                else
-                {
-                    temp = 0;
-                }
+                // 最大値を比較して更新
+                max = Math.Max(max, dp[i]);
             }
 
-            return maxSum;
+            return max;
         }
     }
 }
