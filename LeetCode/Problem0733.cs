@@ -39,7 +39,7 @@ namespace Study
                         new int[] { 2, 2, 0 },
                         new int[] { 2, 0, 1 },
                     },
-                    options => options.ExcludingNestedObjects());
+                    options => options.WithoutStrictOrdering());
         }
 
         [Fact]
@@ -60,7 +60,7 @@ namespace Study
                         new int[] { 0, 0, 0 },
                         new int[] { 0, 0, 0 },
                     },
-                    options => options.ExcludingNestedObjects());
+                    options => options.WithoutStrictOrdering());
         }
 
         public int[][] FloodFill(int[][] image, int sr, int sc, int color)
